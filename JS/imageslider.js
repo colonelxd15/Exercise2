@@ -14,14 +14,14 @@ jQuery(document).ready(function ($) {
             ,100
             ,'swing'
             ,function(){
-            $('#holder .imagepreview:first-child').appendTo('#holder');
+            $('#holder .content:first-child').appendTo('#holder');
             $('#holder').css('margin-left','');
         });    
     }
     
     function left()
     {
-        $('#holder .imagepreview:last-child').prependTo('#holder');
+        $('#holder .content:last-child').prependTo('#holder');
         $('#holder').css('margin-left', '-330px');
         $('#holder').animate({ 'margin-left': ''},100);
     }
@@ -33,13 +33,15 @@ jQuery(document).ready(function ($) {
 
     function openContent(){
         $('.contents').animate({
-            'width':'600px'
+            'width':'600px', 'z-index':'1'
+     
         },100,'swing',linkOpenDisappear);
     };
 
     function closeContent(){
         $('.contents').animate({
             'width':'0px'
+            , 'z-index':'-1'
         },100,'swing',linkOpenAppear);
     };
 

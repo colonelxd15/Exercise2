@@ -127,11 +127,12 @@ body{
 	position: absolute;
 }
 .content{
-	width: 330px;
+	width: 990px;
 	height: 450px;
 	background: whitesmoke;
 	position: absolute;
 	float: left;
+	z-index: 1;
 }
 ul{
 	list-style: none;
@@ -144,14 +145,56 @@ li{
 	float: left;
 	margin: 0px 0px;
 }
+.description{
+	height: 240px;
+	width: 150px;
+	border-radius: 7px;
+	margin: 10px 30px;
+	background: #97AFAB;
+	float: left;
+}
+.description p{
+	margin: 100px 15px;
+	font-size: 12px;
+
+}
+.description h4{
+	font-weight: normal;
+	word-spacing: normal;
+	font-size: 12px;
+	text-align: left;
+	margin: 15px 10px;
+}
+.description img{
+	height: 80px;
+	width: 150px;
+	box-shadow: 1px 1px 1px gray;
+	position: absolute;
+	margin-top: 40px;
+	margin-left: -10px;
+	border: solid #FFF 2px;
+}
+.readmore{
+	color: #000;
+	height: 40px;
+	width: 150px;
+	border-radius: 7px;
+	margin: 10px 30px;
+	background: #97AFAB;
+	float: left;
+	text-decoration: none;
+	text-align: center;
+	line-height: 40px;
+}
 .contents{
 	width: 660px;
 	height: 445px;
 	background: #B0CCC6;
-	margin-left: 0px;
+	margin-left: 330px;
 	margin-top: 0px;
 	text-align: justify;
 	position: absolute;
+	z-index: -1;
 }
 .contents h2{
 	font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -173,6 +216,13 @@ li{
 	text-align: center;
 	color: white;
 }	
+.data h4{
+	text-align: justify;
+	color: white;
+	border-left: white solid 3px;
+	padding: 30px;
+}	
+
 .item_info{
 	position: absolute;
 	margin-top: -220px;
@@ -213,13 +263,4 @@ li{
 							<div class="close"></div>
 						</div>
 
-						<div class="contents" id="itemcontent5">
-							<div class="close"></div>
-							<h2>Full Width Page</h2>
-							Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod.<br/>
-
-							Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.<br/>
-
-							Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida.<br/>
-						</div>
- */
+					*/
