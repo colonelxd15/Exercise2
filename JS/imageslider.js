@@ -28,9 +28,6 @@ jQuery(document).ready(function ($) {
 
 
 
-    $('.content').click(openContent);
-    $('.close').click(closeContent);
-
     function openContent(){
         $('.contents').animate({
             'width':'600px', 'z-index':'1'
