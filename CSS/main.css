@@ -161,10 +161,10 @@ body{
 	position: absolute;
 }
 .content{
-	width: 990px;
+	width: 330px;
 	height: 450px;
 	background: whitesmoke;
-	position: absolute;
+	position: relative;
 	float: left;
 	z-index: 1;
 }
@@ -237,7 +237,7 @@ body{
 }
 .contents{
 	width: 620px;
-	height: 445px;
+	height: 400px;
 	background: #B0CCC6;
 	margin-left: 330px;
 	margin-top: 0px;
@@ -346,30 +346,57 @@ li{
 	text-align: justify;
 	line-height: 12px;
 }
-/*
-	<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css">
-		<link href="http://fonts.googleapis.com/css?family=Terminal+Dosis" rel="stylesheet" type="text/css">
-		<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-	
-
-		<script type="text/javascript" src="JS/content.js"></script>
- */
-/*
-<div class="content">
-					</div>
-				
-
-<div class="contents" id="itemcontent1">
-							<div class="close"></div>
-						</div>
-<div class="contents" id="itemcontent2">
-							<div class="close"></div>
-						</div>
-						<div class="contents" id="itemcontent3">
-							<div class="close"></div>
-						</div>
-						<div class="contents" id="itemcontent4">
-							<div class="close"></div>
-						</div>
-
-					*/
+.addinfo{
+   width: 280px;
+   height: 150px;
+   position: relative;
+   float: left;
+   margin-right: 20px;
+   font-size: 12px;
+}
+.contactform{
+	height: 200px;
+    width: 200px;
+    position: relative;
+    float: left;
+}
+.contactform span{
+	position: relative;
+}
+.contactform img{
+	right: 0px;
+	top: 2px;
+	position: absolute;
+}
+.textbox{
+	background: #97AFAB;
+	color: white;
+	padding: 0px 0px;
+	position: relative;
+	height: 20px;
+	border: 3px #99AFAC;
+}
+.addinfo h5{
+	font-size: 13px;
+}
+.contactform h6{
+	margin: 10px 0px 5px 0px;
+	font-size: 12px;
+}
+#message{
+	height: 65px;
+	width: 185px;
+	margin: 0px 0px;
+}
+#submit{
+	height: 30px;
+	width: 185px;
+	border-radius: 3px;
+	color: white;
+	background: #1A1A1A;
+	border: 1px solid #1A1A1A;
+	opacity: 1.0;
+}
+#submit:hover{
+	opacity: 0.8;
+}
