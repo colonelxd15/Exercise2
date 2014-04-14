@@ -9,12 +9,12 @@ jQuery(document).ready(function ($) {
     $('#link5').hover(function(){hoverIn(5)},function(){hoverOut(5)});
 
 
-    function hoverIn(num)
-    {
+    function hoverIn(num){
         $('#link' + num).animate({'margin-top':'260px'
-            ,'height': '180px'}
-            ,10
-            ,"linear",linkExpand(num));    
+        ,'height': '180px'}
+        ,10
+        ,"linear"
+        ,linkExpand(num));    
     }
 
     function hoverOut(num)
@@ -25,10 +25,10 @@ jQuery(document).ready(function ($) {
             ,"linear",linkBack(num));    
     }
     function linkExpand(num){
-        $('#link' + num + ' span').animate({'width': '80px'},50);
+        $('#link' + num + ' span').animate({'width': '80px'},10);
     }
 
     function linkBack(num){
-        $('#link' + num + ' span').animate({'width': '50px'},50);
+        $('#link' + num + ' span').animate({'width': '50px'},10);
     }
 });
