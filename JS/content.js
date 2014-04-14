@@ -5,13 +5,13 @@ jQuery(document).ready(function ($) {
 
 	function openContent(){
 		$('.content').animate({
-			'width':'600px'
+			'width':'990px'
 		},100,'swing',linkOpenDisappear);
 	};
 
 	function closeContent(){
 		$('.content').animate({
-			'width':'0px'
+			'width':'330px'
 		},100,'swing',linkOpenAppear());
 	};
 
