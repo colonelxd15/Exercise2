@@ -2,49 +2,60 @@ jQuery(document).ready(function ($) {
 
     var num = 1;
     var counter = 1;
+    var currentBox;
     var position;
 
-    $('#control_prev').click(left);
-    $('#control_next').click(right);
+    $('#control_prev').on('click',
+        function(){
+            left();
+        }
+    );
+    $('#control_next').on('click',
+        function(){
+
+            right();
+        }
+    );
   
-    $('#link1').on('click',function(){
-        getChildPosition("content1");
+    $('.data').on('click',function(){
+        currentBox = $(this).parents(".content");
+        position = $(this).parents(".content").index();
+        $('.content').not(currentBox).css('display','none');
+        toFirstChild();
         openContent();
-        content(1);
-        contents();
-    });
-    $('#link2').on('click',function(){
-        getChildPosition("content2");
-        openContent();
-        content(2);
-        contents();
-    });
-    $('#link3').on('click',function(){
-        getChildPosition("content3");
-        openContent();
-        content(3);
-        contents();
-    });
-    $('#link4').on('click',function(){
-        getChildPosition("content4");
-        openContent();
-        content(4);
-        contents();
-    });
-    $('#link5').on('click',function(){
-        getChildPosition("content5");
-        openContent();
-        content(5);
-        contents();
-    });
-    
-    $('.close').click(function(){
-        contents();
-        back();
-        closeContent();
     });
    
-    function right(){ 
+
+    
+    $('.close').on('click', function(){
+        $('.content').css('display','block');
+        toPreviosPos();
+        closeContent();
+    });
+    
+    function toFirstChild(){
+        var x = 0;
+
+        while(x<=(position - 1))
+        {
+            $('#holder .content:first-child').appendTo('#holder'); 
+            x++;
+        }
+    };
+
+    function toPreviosPos(){
+        var x = 0;
+
+        while(x<=(position - 1))
+        {
+            $('#holder .content:last-child').prependTo('#holder'); 
+            x++;
+        }
+    };
+    function right(){
+        
+        $('.content').css('display','block');
+
         $('#holder').animate(
             {'margin-left': '-' + (num * 330) + 'px'} 
             ,500
@@ -52,15 +63,16 @@ jQuery(document).ready(function ($) {
             ,function(){ 
                 $('#holder .content:first-child').appendTo('#holder'); 
                 $('#holder').css('margin-left',''); 
-            }
-        ); 
+             }
+        );
     };
-    
+
     function left() {
         $('#holder .content:last-child').prependTo('#holder'); 
-        $('#holder')
-            .css('margin-left', '-' + (num * 330) +'px')
-            .animate({ 'margin-left': ''},500,'easeOutExpo'); 
+        $('#holder').css('margin-left', '-' + (num * 330) +'px')
+        $(currentBox).prev().css('display','block');
+        $('#holder').animate({ 'margin-left': ''},500,'easeOutExpo'); 
+        currentBox = $(currentBox).prev();
     }; 
     
     function openContent(){ 
@@ -82,7 +94,7 @@ jQuery(document).ready(function ($) {
         $('.data span').animate({'right':'-100px'}
             ,200
             ,'easeOutExpo');
-             num = 3; 
+        num = 3; 
     };
 
     function linkOpenDisappear(){ 
@@ -90,7 +102,24 @@ jQuery(document).ready(function ($) {
             .css({'right':'0px'}); 
         num = 1; 
     };    
-    
+
+
+});
+    /*
+    function getChildPosition()
+    {
+        var index;
+        index = 0;
+        while(index<=2)
+        {
+            if(currentBox === ($('#holder > .content').eq(index)))
+            {
+                $('#holder .content:first-child').appendTo('#holder'); 
+            }
+            index++;
+        }
+
+    }
     function content(i)
     {
         var index = 1;  
@@ -107,34 +136,10 @@ jQuery(document).ready(function ($) {
             }
             index++;
         }
-    }
+    }*/
     
-    function getChildPosition(handler){
-        console.log(handler);
-        console.log("--------");
-        console.log($('#holder .content').get(0).id);
-        console.log($('#holder .content').get(1).id);
-        console.log($('#holder .content').get(2).id);
 
-        if(handler === ($('#holder .content').get(0).id))
-        {
-            position = "first";       
-        }
-        else if(handler === ($('#holder > .content').get(1).id)){
-
-            $('#holder .content:first-child').appendTo('#holder'); 
-            position = "second";
-        }
-        else if(handler === ($('#holder > .content').get(2).id)){
-            $('#holder .content:first-child').appendTo('#holder'); 
-            $('#holder .content:first-child').appendTo('#holder'); 
-            position = "third";
-        }        
-
-    }
-
-
-    function contents()
+/*function contents()
     {
         var index = 1;  
         while(index <= 5)
@@ -157,5 +162,4 @@ jQuery(document).ready(function ($) {
             $('#holder .content:last-child').prependTo('#holder'); 
             $('#holder .content:last-child').prependTo('#holder');
         }
-    }
-});
+    }*/
